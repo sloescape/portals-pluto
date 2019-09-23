@@ -374,7 +374,7 @@ public class HttpServletPortletRequestWrapper extends HttpServletRequestWrapper 
       de.type = Type.FWD;
       de.qparms = processPath(path);
       dispatches.add(de);
-      isMethSpecialHandling = true;       //!isForwardingPossible(); (logical, but not to spec)
+      isMethSpecialHandling = !isForwardingPossible();
       isAttrSpecialHandling = true;
       
       reqctx.startDispatch(this, de.qparms, phase);
